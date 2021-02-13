@@ -21,3 +21,28 @@ export const SIGN_UP = gql`
     signup(token: $token)
   }
 `
+
+export const SIGN_IN = gql`
+  mutation SIGN_IN($email: String!, $password: String!) {
+    signin(email: $email, password: $password) {
+      __typename
+      ... on AuthPayload {
+        token
+        user {
+          name
+          email
+        }
+      }
+      ... on SignInError {
+        emailError
+        passwordError
+      }
+    }
+  }
+`
+
+export const LOG_OUT = gql`
+  mutation LOG_OUT {
+    signout
+  }
+`

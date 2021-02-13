@@ -21,7 +21,7 @@
     "@babel/core": "^7.12.13",
     "@sendgrid/mail": "^7.4.2",
     "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "graphql-yoga": "^1.18.3",
     "jsonwebtoken": "^8.5.1",

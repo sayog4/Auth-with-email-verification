@@ -61,7 +61,7 @@ const Signup = () => {
           <Form.Label>Email</Form.Label>
           <Form.Control
             name="email"
-            type="email"
+            type="text"
             autoComplete="email"
             placeholder="Enter Email"
             value={values.email}

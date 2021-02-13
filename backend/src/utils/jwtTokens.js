@@ -17,4 +17,13 @@ const verifyAndDecodeToken = token => {
   })
 }
 
-export { preSignupToken, verifyAndDecodeToken }
+const signinToken = id => {
+  return jwt.sign({ userId: id }, process.env.JWT_SECRET)
+}
+
+const verifyToken = token => {
+  const { userId } = jwt.verify(token, process.env.JWT_SECRET)
+  return userId
+}
+
+export { preSignupToken, verifyAndDecodeToken, signinToken, verifyToken }

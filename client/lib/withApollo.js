@@ -19,9 +19,9 @@ const createClient = ({ headers, initailState }) => {
       }),
       createUploadLink({
         uri: process.env.NEXT_PUBLIC_GQL_URL,
-        // fetchOptions: {
-        //   credentials: 'include'
-        // },
+        fetchOptions: {
+          credentials: 'include'
+        },
         headers
       })
     ]),

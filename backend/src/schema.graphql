@@ -1,10 +1,11 @@
 type Query {
-  hello: String!
+  me: User
 }
 type Mutation {
   preSignup(name: String!, email: String!, password: String!): PreSignup
   signup(token: String!): String!
   signin(email: String!, password: String!): SignIn
+  signout: String!
 }
 
 union SignIn = SignInError | AuthPayload
