@@ -1,0 +1,37 @@
+type Query {
+  hello: String!
+}
+type Mutation {
+  preSignup(name: String!, email: String!, password: String!): PreSignup
+  signup(token: String!): String!
+  signin(email: String!, password: String!): SignIn
+}
+
+union SignIn = SignInError | AuthPayload
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+type SignInError {
+  emailError: String
+  passwordError: String
+}
+type User {
+  id: ID
+  name: String
+  email: String
+  admin: Boolean
+}
+
+union PreSignup = SignUpError | Message
+
+type SignUpError {
+  emailError: String
+  nameError: String
+  passwordError: String
+}
+
+type Message {
+  message: String!
+}
